@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--<script>alert("Welcome to Soul Recipes!")</script>-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Soul Recipes</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/e44f297cb1.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' type="text/css" rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tsukimi+Rounded&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+</head>
+
+<body>
+                                                        <!--HEADER+NAVBAR-->
+<div class="container-fluid">
+<div class="row">   
+    <header class="topheader">
+        <div class="quote">
+            <h1 id="logo">Soul Recipes</h1>
+            <p id="thomas"><b>“A recipe has no soul. You, as the cook, must bring soul to the recipe.”<span
+                        style="color:tan;font-weight:bold">- Thomas Keller</span></b></p>
+        </div>
+        <input type="text" id="searchbar" placeholder="   Search Blog...">
+        <nav class="navbar">
+            <a href="#homebutton"><button class="nav-button"> Home</button></a>
+            <a href="#cards"><button class="nav-button"> Recipes</button></a>
+            <a onclick="afiseazaAbout(event)" href="#c8container"><button class="nav-button">About</button></a>
+            <a href="#"><button class="btnLogin-popup"> Login</button></a>
+        </nav>
+    </header>
+</div>
+</div>
+ 
+
+
+                                                    <!--LOGIN WRAPPER-->
+<div class="wrapper">
+<span class="icon-close">
+<i class='bx bx-x'></i>
+</span>
+<div class="logreg-box">
+                                                          <!-- login form -->
+<div class="form-box login">
+<div class="logreg-title">
+ <h2 style="font-weight: 900;">Login</h2>
+<p>Please login to use the platform.</p>
+</div>
+
+<form action="#" onsubmit="return validateLoginForm()">
+<div class="input-box">
+<span class="icon"><i class='bx bxs-envelope'></i></span>
+<input type="email" id="login-email" required>
+<label for="login-email">Email</label>
+</div>
+                                                      
+<div class="input-box">
+<span class="icon"><i class='bx bxs-lock-alt'></i></span>
+<input type="password" id="login-password" required>
+<label for="login-password">Password</label>
+</div>
+                                                      
+<div class="remember-forgot">
+<label><input type="checkbox">Remember me</label>
+<a href="#">Forgot password?</a>
+</div>
+                                                      
+<button type="submit" class="btn">Login</button>
+<div class="logreg-link">
+<p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+</div>
+</form>
+</div>
+                                                            <!--  register form  -->
+<div class="form-box register">
+<div class="logreg-title">
+<h2 style="font-style: oblique; font-weight: 900;">Registration</h2>
+<p>Please provide the following to verify your identity</p>
+</div>
+                                                      
+<form action="#" onsubmit="return validateRegistrationForm()">
+    <div class="input-box">
+      <span class="icon"><i class='bx bxs-user'></i></span>
+      <input type="text" id="register-name" required>
+      <label for="register-name">Full name</label>
+    </div>
+  
+    <div class="input-box">
+      <span class="icon"><i class='bx bxs-envelope'></i></span>
+      <input type="email" id="register-email" required>
+      <label for="register-email">Email</label>
+    </div>
+  
+    <div class="input-box">
+      <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+      <input type="password" id="register-password" required>
+      <label for="register-password">Password</label>
+    </div>
+  
+    <div class="remember-forgot">
+        <label><input id="agree-checkbox" type="checkbox"> I agree to the terms & conditions</label>
+      </div>
+  
+    <button type="submit" class="btn" id="register-button" disabled>Register</button>
+  </form>
+ 
+                                                      
+<div class="logreg-link">
+<p>Already have an account? <a href="#" class="login-link">Login</a></p>
+</div>
+</form>
+</div>
+</div>
+                                                      
+<div class="media-options">
+<a href="#">
+<i class='bx bxl-google'></i>
+<span>Login with Google</span>
+</a>
+<a href="#">
+<i class='bx bxl-facebook-circle'></i>
+<span>Login with Facebook</span>
+</a>
+</div>
+</div>
+
+
+
+                                                     <!--CONTAINER CAROUSEL WELCOME-->
+<div class="container-fluid-carousel">
+<div class="row">
+
+
+    <div class="col-xs-6 col-md col-lg-6">
+<section class="slider-wrapper">
+    <button class="slide-arrow" id="slide-arrow-prev">
+      &#8249;
+    </button>
+   
+    <button class="slide-arrow" id="slide-arrow-next">
+      &#8250;
+    </button>
+   
+    <ul class="slides-container" id="slides-container">
+    <li class="slide"><img src="poze/carousel/foodiesfeed.com_traditional-turkish-baklava-dessert-detail.jpg" height="600px" width="550px"></li>
+    <li class="slide"><img src="poze/carousel/foodiesfeed.com_meat-tacos.jpg" height="600px" width="550px"></li>
+    <li class="slide"><img src="poze/carousel/foodiesfeed.com_medium-done-steak-with-fresh-herb.jpg" height="600px" width="550px"></li>
+    <li class="slide"><img src="poze/carousel/foodiesfeed.com_sushi-details.jpg" height="600px" width="550px"></li>
+    <li class="slide"><img src="poze/carousel/foodiesfeed.com_exotic-coconut-rice-and-beans-dessert-with-mango.jpg" height="600px" width="550px"></li>
+    <li class="slide"><img src="poze/carousel/foodiesfeed.com_close-up-of-butter-chicken-indian-dish.jpg" height="600px" width="550px"></li>
+    <li class="slide"><img src="poze/carousel/foodiesfeed.com_croissants-on-dark-background.jpg" height="600px" width="550px"></li>  
+    <li class="slide"><img src="poze/carousel/foodiesfeed.com_tuna-poke-close-up.jpg" height="600px" width="550px"></li> 
+    <li class="slide"><img src="poze/carousel/foodiesfeed.com_fresh-cinnamon-roll-detail-shot.jpg" height="600px" width="550px"></li>    
+    <li class="slide"><img src="poze/carousel/foodiesfeed.com_colorful-vegetables-stir-fry.jpg" height="600px" width="550px"></li>
+    <li class="slide"><img src="poze/carousel/foodiesfeed.com_minestrone-soup.jpg" height="600px" width="550px"></li>
+    <li class="slide"><img src="poze/carousel/foodiesfeed.com_strawberry-mint-lemonade-with-ice-in-a-glass.jpg" height="600px" width="550px"></li>
+    </ul>
+</section>
+    </div>
+    
+    <div class="col-xs-6 col-md col-lg-6">
+        <div class="welcome">
+            <h1 id="wsr">Welcome to Soul Recipes</h1>
+            <h2>LET’S TALK FOOD
+            <span style="font-family: 'Dancing Script'; color: yellow;">shall we?</span>
+            </h2>
+            <p id="welcome">Well, we hope that’s why you’re here. Our recipes are designed for real, actual, every day life, and we try to focus on real foods and healthy recipes (which honestly means a lot of different things to us, including the perfect chocolate chip cookie and cheese on cheese on cheese, because health is all about balance, right?).
+
+                This is the place to find those recipes — everything from our most popular, to meal prep, to Instant Pot recipes, or if you just, like, have some sad greens in your fridge to use up and you need some inspiration.
+                
+                You’re here! Have fun. We hope you find something (many things) you love.</p></div>
+        </div>
+    </div>
+
+
+
+</div>
+</div>
+
+
+
+                                                                             <!--CONTAINER MAIN-->
+<div class="container-fluid">      
+                                                                            <!--sidebar hidden recipes-->
+<div class="row">           
+    <div class="col-12 col-md-3">
+                <div class="tip1">
+                    <p id="homebutton" class="numeRetete"><i><b>Baked Goods</b></i></p>
+                    <a href="#c3container" onclick="afiseazaC1(event);"><img class="poze" src="poze/snacks.jpg" alt="brutarie" height="160" width="300px"></a>
+                </div>
+                <div class="tip2">
+                    <p class="numeRetete"><i><b>Fruity&Veggie Goods</b></i></p>
+                    <a href="#c4container" onclick="afiseazaC2(event);"><img class="poze" src="poze/fruity.jpg" alt="legume fructe"
+                            height="160" width="300px"></a>
+                </div>
+                <div class="tip3">
+                    <p class="numeRetete"><i><b>Soups</b></i></p>
+                    <a href="#c5container" onclick="afiseazaC3(event);"><img class="poze" src="poze/soup2.jpg" alt="supe" height="160"
+                            width="300px"></a>
+                </div>
+                <div class="tip4">
+                    <p class="numeRetete"><i><b>Meals</b></i></p>
+                    <a href="#c6container" onclick="afiseazaC4(event);"><img class="poze" src="poze/meals.jpg" alt="preparate"
+                            height="160" width="300px"></a>
+                </div>
+                <div class="tip5">
+                    <p class="numeRetete"><i><b>Desserts</b></i></p>
+                    <a href="#c7container" onclick="afiseazaC5(event);"><img class="poze" src="poze/strawberry.jpg" alt="deserturi"
+                            height="160" width="300px"></a>
+                </div>
+    </div>
+
+            
+        
+        
+
+                                                                                  <!--slider-->
+    <div class="col-12 col-md-9">
+            <div class=" slider">
+<!--slider container 1-->
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-12 col-md-6">
+                                <h2 id="recipe">The Latest & Greatest</h2>
+                                <div class="title-image">
+                                    <p class="titleimage">Lemon Herb Pasta Salad with Marinated Chickpeas</p>
+                                    <img id="pasta" alt="poza reteta zilei" src="poze/pasta.jpg">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="ingredients">
+                                    <ul><b style="color: #f8ce8a;"><i>Marinated Chickpeas</i></b>
+                                        <li>One 14 ounce can chickpeas, drained and rinsed</li>
+                                        <li>1/4 cup olive oil</li>
+                                        <li>1 clove garlic, grated or crushed into a paste</li>
+                                        <li>A generous squeeze of lemon juice</li>
+                                        <li>1 teaspoon salt</li>
+                                    </ul>
+                                    <ul><b style="color: #f8ce8a;"><i>Pasta</i></b>
+                                        <li>8 ounces farfalle pasta</li>
+                                        <li>1/4 cup olive oil (as needed)</li>
+                                        <li>Juice and zest of one lemon</li>
+                                        <li>1/2 cup finely chopped parsley and basil</li>
+                                        <li>Salt and pepper to taste</li>
+                                        <li>1/2 cup freshly grated Parmesan cheese</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <div class="tabelinfo">
+                                    <table>
+                                    <p style="text-align: center; font-style: oblique; color: rgb(255, 255, 254);">
+                                            NUTRITION FACTS</p>
+                                        <tr>
+                                            <th style="color:yellow">Nutrients</th>
+                                            <th style="color: yellow;">%</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Fat 33.9g</td>
+                                            <td>43%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sodium 1070.4mg
+                                            </td>
+                                            <td>47%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Protein 17.1g</td>
+                                            <td>34%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Carbohydrates 59.9g</td>
+                                            <td>22%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cholesterol 7.2mg</td>
+                                            <td>2%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Iron 3.9mg</td>
+                                            <td>22%</td>
+                                        </tr>
+                                    </table>
+                                    <p style="color:yellow;">Serves: 4</p>
+                                    <p style="color:yellow;">Calories Per Serving: 599</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="container instructions">
+                        <ol type="I"><b style="color: rgb(255, 238, 202);">INSTRUCTIONS:</b>
+                            <li>Prepare marinated chickpeas by combining everything together in a shallow bowl. For the
+                                best
+                                flavor, allow this to marinate for 8 hours or overnight. But hey, if you don't have the
+                                time,
+                                just let it all hang out while you prep the rest of the pasta. It's all good.</li>
+                            <li>Cook pasta according to package directions. Drain. While pasta is hot, toss with
+                                marinated
+                                chickpeas and allow to cool slightly.</li>
+                            <li>Add more olive oil (as needed). Add lemon juice and zest and herbs. Season with salt and
+                                pepper.
+                                Add in Parmesan cheese last so it doesn’t completely melt. Serve warm, cold, or room
+                                temp
+                                with
+                                extra lemon, Parmesan, and herbs as needed!</li>
+                        </ol>
+                    </div>
+ <!--slider container 2-->
+                    <div class="container"> 
+                        <div class="row">
+
+                            <div class="col-12 col-md-7">
+                                <div class="ytcontainer">
+                                    <iframe id="yt" width="500" height="315"
+                                        src="https://www.youtube.com/embed/UnSG6WiLvw8" title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-5">
+                                <div class="ratingX">
+                                    <p id="consider">"Consider this your weekly (daily?) reminder that really delicious
+                                        food
+                                        does not need to be complicated.
+                                        The basics – garlic, lemon, herbs, olive oil – are prepared to deliver. They are
+                                        usually
+                                        somewhere in the pantry or fridge, and they are always going to serve us well.
+                                        I give you Exhibit A: The Lemon Herb Pasta Salad with Marinated Chickpeas which
+                                        involves
+                                        deliciously squishy pasta coated in a silky “sauce” of olive oil and lemon
+                                        juice,
+                                        tossed
+                                        with chickpeas that have been soaking in a flavor bath of fresh garlic and herbs
+                                        and
+                                        such, and finished with more herbs and lots of salt and pepper and some Parmesan
+                                        cheese."</p>
+                                    <div class="rating">
+                                        <p id="pp" style="color:#fff; font-size: medium;">77 REVIEWS
+                                            /
+                                            5.0
+                                            Excellent</p>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+                                                                             <!--COOKBOOK-->
+<div class="cookbook container-fluid">
+    <div class="row">
+    <div class="col-lg-8 col-md-6">
+    <div class="srcookbook">
+    <p id="src"><span style="color: yellow;">Soul Recipes</span> Cookbook</p>
+    <p style="color:#fff">The eBook includes our most popular 25 recipes. Enter your email and we'll send it right over or click on it to download as a .pdf!</p>
+    <form id="myForm" onsubmit="return validateForm2()">
+    <input type="text" id="name" name="name" placeholder="First Name">
+    <input type="email" id="mail" name="mail" placeholder="Email">
+    <input type="submit" id="go" name="submit" value="GO">
+    </form>
+    </div>
+    </div>
+    <div class="col-lg-4 col-md-6">
+    <a href="https://pinchofyum.com/wp-content/uploads/Pinch-of-Yum-Ecookbook-2021.pdf">
+    <img id="book" src="poze/cookbook.jpg" alt="cookBook" height="270px" width="340px">
+    </a>
+    </div>
+    </div>
+    </div>
+
+
+
+                                                                     <!--RECIPE CARDS-->
+<div id="cards">
+    <div class="row">
+        <div class="col-12">
+        <h6 id="latest">Have a Look At Our Latest Recipes</h6>
+    </div>
+    </div>
+<div class="container-two">
+<div class="row">
+
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card" style="width: 100%;">
+    <img src="poze/quick/Apricot-Sesame-Tofu-3-400x400.jpg" alt="tofu" height="300px">
+        <div class="card-body">
+    <h5 class="card-title">Apricot Sesame Tofu</h5>
+    <a onclick="myFunction()" class="btn btn-primary">See more</a>
+            </div>
+        </div>
+    </div>
+
+<div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card" style="width: 100%;">
+        <img src="poze/quick/Crispy-Black-Bean-Tacos-2-400x400.jpg" alt="tacos" height="300px">
+            <div class="card-body">
+        <h5 class="card-title">Crispy Black Bean Tacos</h5>
+        <a onclick="myFunction2()" class="btn btn-primary">See more</a>
+            </div>
+        </div>
+    </div>
+
+<div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card" style="width: 100%;">
+        <img src="poze/quick/ginger-chicken-meatball-sandos-63-400x400.jpg" alt="tacos" height="300px">
+            <div class="card-body">
+        <h5 class="card-title">Ginger Chicken Meatball Sandos</h5>
+        <a onclick="myFunction3()" class="btn btn-primary">See more</a>
+            </div>
+        </div>
+    </div>
+
+<div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card" style="width: 100%;">
+        <img src="poze/quick/Gnochi-with-Ragu-400x400.jpg" alt="ragu" height="300px">
+            <div class="card-body">
+        <h5 class="card-title">Gnochi With Ragu</h5>
+        <a onclick="myFunction4()" class="btn btn-primary">See more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-two">
+<div class="row">
+    
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card" style="width: 100%;">
+        <img src="poze/quick/House-Favorite-Brussels-Sprouts-3-400x400.jpg" alt="tofu" height="300px">
+            <div class="card-body">
+        <h5 class="card-title">House-Favorite Brussels Sprouts</h5>
+        <a onclick="myFunction5()" class="btn btn-primary">See more</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card" style="width: 100%;">
+            <img src="poze/quick/Instant-Pot-Mac-and-Cheese-400x400.jpg" alt="tacos" height="300px">
+                <div class="card-body">
+            <h5 class="card-title">Instant Pot Mac-And-Cheese</h5>
+            <a onclick="myFunction6()" class="btn btn-primary">See more</a>
+                </div>
+            </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card" style="width: 100%;">
+            <img src="poze/quick/Pineapple-Pork-2-400x400.jpg" alt="tacos" height="300px">
+                <div class="card-body">
+            <h5 class="card-title">Pineapple Pork With Fine Herbs</h5>
+            <a onclick="myFunction7()" class="btn btn-primary">See more</a>
+                </div>
+            </div>
+        </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-6">
+        <div class="card" style="width: 100%;">
+            <img src="poze/quick/Strawberry-White-Chocolate-Cookies-3-400x400.jpg" alt="ragu" height="300px">
+                <div class="card-body">
+            <h5 class="card-title">Strawberry White Chocolate Cookies</h5>
+            <a onclick="myFunction8()" class="btn btn-primary">See more</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+    
+
+
+
+                                                                 <!--hidden card recipes-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="easy" id="myDIV">
+    <span class="close">
+        <i class='bx bx-x'></i>
+        </span>
+    <div class="at">
+    <img id="att" alt="Tofu" src="poze/quick/Apricot-Sesame-Tofu-3-400x400.jpg" width="150px">
+    <p id="ast">Apricot Sesame Tofu</p>
+    </div>
+    <p id="attt" style="font-style: italic; color: rgb(255, 237, 199);">Torn-up tofu pan-fried into crispiness and made saucy, sticky, and sweet into this Sesame Apricot Tofu. An easy, simple vegetarian dinner that’s deliciously saving my life!</p>
+    <ul class="ingrediente"><p style="color:yellow">Crispy Tofu:</p>
+        <li>1 block of extra firm tofu (high protein tofu works really well in this recipe, if you can find it!)</li>
+        <li>2 tablespoons cornstarch</li>
+        <li>1 tablespoon soy sauce</li>
+        <li>2 tablespoons olive oil</li>
+        </ul>
+    <ul class="ingrediente"><p style="color:yellow">Apricot Sauce:</p>
+        <li>1/3 cup apricot preserves</li>
+        <li>1 tablespoons soy sauce</li>
+        <li>1–2 tablespoons rice vinegar</li>
+        <li>1/2 teaspoon each cumin, paprika, and onion powder</li>
+        <li>1–2 cloves garlic, grated (2 for more garlic flavor, obviously)</li>
+        <li>1/4 teaspoon salt (more to taste)</li>
+        </ul>
+    <ul class="ingrediente"><p style="color:yellow">For Serving:</p>
+        <li>1 cup rice</li>
+        <li>12 ounces steamed green beans</li>
+        <li>1–2 tablespoons toasted sesame oil to taste</li>
+        <li>1/4 cup chives and/or cilantro for topping</li>
+        </ul>
+        <ol id="instructiuni"><p style="color: yellow; font-size: large;"><b>INSTRUCTIONS:</b></p>
+        <li>Cut the tofu block in half horizontally (like a hamburger). If using extra firm high protein tofu, it helps to cut it in half again horizontally. Press the water out of the tofu by wrapping it in paper towels and setting a few heavy books on top of it. Let it stay like that for a few minutes while you prep the sauce.</li>
+        <li>Whisk the sauce ingredients together.</li>
+        <li>Take each piece of tofu and gently pull it into small chunks with your hands (this just gives the tofu pieces a unique shape and texture that holds onto the sauce really well). Place the chunks in a bowl. Toss with soy sauce and a teaspoon or two of olive oil; then sprinkle with cornstarch and give it a few gentle tosses to coat.</li>
+        <li>Before your start browning your tofu, cook your rice according to package directions and start your green beans! Steam, microwave, sautè – whatever your preferred green bean method is.</li>
+        <li>In a nonstick skillet over medium high heat, heat the olive oil and then add the cornstarched tofu. Leave it undisturbed for a few minutes on each side, letting it get really nice and brown and crispy – this can take 10-15 minutes. Flip and repeat until the whole batch is browned and crispy.</li>
+        <li>Finally, add the sauce to the tofu and remove from heat – the pan will still be hot, so it’ll be sizzly and smell really good from the garlic. The sauce will coat the tofu right away.</li>
+        <li>Top with the chives and/or cilantro and sesame oil. Serve with rice and green beans, and finish with more salt and lots of black pepper to taste. The tender crunch of the beans with the steamy rice and sticky tofu!</li>
+        </ol>
+</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="easy" id="myDIV2">
+                <span class="close">
+                    <i class='bx bx-x'></i>
+                    </span>
+                <div class="at">
+                    <img id="att" alt="tacos" src="poze/quick small/Crispy-Black-Bean-Tacos-Square-183x183.png" width="150px">
+                        <p id="ast">Crispy Black Bean Tacos With Cilantro Lime Sauce</p>
+                    </div>
+                    <p id="attt" style="font-style: italic; color: rgb(255, 237, 199);">These vegetarian tacos have a deliciously satisfying black bean filling with fresh salsa and seasonings all tucked into a golden crispy tortilla and served alongside a cool and creamy cilantro lime sauce. YUM!</p>
+                    <ul class="ingrediente"><p style="color:yellow">Crispy Black Bean Tacos:</p>
+                        <li>1 (14-ounce) can of black beans, rinsed and drained</li>
+                        <li>1/4 cup of your favorite salsa</li>
+                        <li>1 tablespoon taco seasoning</li>
+                        <li>6–8 small flour tortillas</li>
+                        <li>1/4 – 1/2 cup olive oil or butter for frying</li>
+                    </ul>
+                    <ul class="ingrediente"><p style="color:yellow">Cilantro Lime Sauce:</p>
+                        <li>1/4 cup oil</li>
+                        <li>1/4 cup water</li>
+                        <li>1/2 cup chopped green onions</li>
+                        <li>1/2 cup cilantro leaves</li>
+                        <li>2 cloves garlic</li>
+                        <li>1/2 teaspoon salt</li>
+                        <li>juice of 2 limes</li>
+                        <li>1/2 cup sour cream (sub avocado to keep it dairy free / vegan)</li>
+                    </ul>
+                    <ol id="instructiuni"><p style="color: yellow; font-size: large;"><b>INSTRUCTIONS:</b></p>
+                        <li>Blend all ingredients in the cilantro lime sauce until smooth-ish. Set aside.</li>
+                        <li>In a food processor or chopper, blend the beans, salsa, and taco seasoning. Transfer to a skillet with a drizzle of oil and cook it up long enough to soften the flavors of the garlic and / or onions in the salsa. About 5 minutes is fine.</li>
+                        <li>Spread a few tablespoons of black bean filling into a flour tortilla. Fold in half. Repeat until the filling is used up (about 6-8 tacos).
+                        </li>
+                        <li>Heat some oil or butter in a skillet over medium heat. Fry in a skillet over medium heat, until crispy and golden brown. Dip in cilantro lime sauce. Serve with chips and salsa and a mid-week margarita. You’re welcome.</li>
+                    </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="easy" id="myDIV3">
+    <span class="close">
+        <i class='bx bx-x'></i>
+        </span>
+        <div class="at">
+            <img id="att" alt="meatballs" src="poze/quick small/Ginger-Chicken-Meatball-Sandos-Square-183x183.png" width="150px">
+            <p id="ast">Ginger Chicken Meatball Sandos</p>
+            </div>
+            <p id="attt" style="font-style: italic; color: rgb(255, 237, 199);">Golden brown chicken meatballs cozied up next to fixings like cucumbers, shallots, kewpie mayo, mint, a bit of chili crisp*, and some fresh cilantro to make the ultimate chicken sando!</p>
+        <ul class="ingrediente"><p style="color:yellow">Ginger Chicken Meatballs:</p>
+            <li>2 cloves garlic</li>
+            <li>1 serrano pepper, stem removed</li>
+            <li>one 1-inch piece of ginger, peeled</li>
+            <li>a bunch of fresh cilantro</li>
+            <li>3 teaspoons fish sauce</li>
+            <li>1 1/2 tablespoons brown sugar</li>
+            <li>1 tablespoon cornstarch</li>
+            <li>1 pound ground chicken</li>
+            <li>2 tablespoons olive oil</li>
+            <li>pinch of salt</li>
+        </ul>
+        <ul class="ingrediente"><p style="color: yellow;">For serving:</p>
+            <li>4 pieces soft bread – either soft French bread or flatbread like pita or naan</li>
+            <li>1/2 cup mayo or kewpie*</li>
+            <li>1 cucumber, sliced</li>
+            <li>1 sliced shallot or red onion</li>
+            <li>2 tablespoons cilantro</li>
+            <li>1/4 cup mint leaves</li>
+            <li>2 tablespoons chili crisp* or sriracha</li>
+        </ul>
+        <ol id="instructiuni"><p style="color: yellow; font-size: large;"><b>INSTRUCTIONS:</b></p>
+            <li>Blitz garlic, serrano pepper, a bunch of fresh cilantro, and a piece of ginger in a small chopper or food processor until minced.</li>
+            <li>Add mixture to a large bowl. Mix with ground chicken, fish sauce, brown sugar, cornstarch, and salt. Form into 12 meatballs – they will be wet but that’s okay. The shape doesn’t need to be perfect!</li>
+            <li>In a large skillet with a lid, heat oil over medium-high heat. Add the meatballs and let them begin to cook.</li>
+            <li>Add 2 tablespoons water; it will sizzle, so wear an apron and have your lid ready! Put the lid on the pan and let the meatballs cook for a few minutes. Uncover, flip, and repeat. Within about 10 minutes, the meatballs should be cooked through, tender, and nicely golden brown.</li>
+            <li>To serve, warm the bread so it’s nice and soft. Shmear with mayo, top with meatballs, sliced cucumber, sliced shallot, cilantro and mint, and a drizzle of chili crisp. Messy, saucy, and mind-blowingly delicious.</li>
+        </ol>
+</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="easy" id="myDIV4">
+    <span class="close">
+        <i class='bx bx-x'></i>
+        </span>
+    <div class="at">
+        <img id="att" alt="ragu" src="poze/quick small/Gnochi-Feature-1-183x183.jpg" width="150px">
+            <p id="ast">Gnocchi with Ragu</p>
+        </div>
+        <p id="attt" style="font-style: italic; color: rgb(255, 237, 199);">Instant Pot Short Rib Ragu! Ready in an hour. AMAZING on gnocchi, pasta, polenta, rice, potatoes, and more.</p>
+        <ul class="ingrediente"><p style="color:yellow">Ingredients:</p>
+            <li>2 lbs bone-in short ribs (or 1 lb boneless)</li>
+            <li>1 tablespoon vegetable oil</li>
+            <li>1 small onion, finely diced</li>
+            <li>2 cloves garlic, chopped</li>
+            <li>1/4 cup dry red wine</li>
+            <li>one 25-oz jar store bought marinara/spaghetti sauce (I use DeLallo tomato basil sauce)</li>
+            <li>1/2 cup water</li>
+            <li>1/2 teaspoon salt</li>
+            <li>1/4 teaspoon crushed red pepper</li>
+            <li>salt & pepper, to taste</li>
+            <li>1 lb. pasta or gnocchi</li>
+        </ul>
+        <ol id="instructiuni"><p style="color: yellow; font-size: large;"><b>INSTRUCTIONS:</b></p>
+            <li>Get ready: Turn instant pot on to the sauté setting. While it heats up, trim any excess fat from the short ribs, then pat dry with a paper towel. Generously season the meat with salt and pepper.</li>
+            <li>Brown those short ribs: Add oil to the Instant Pot. Add the short ribs to the hot oil and sear on all sides until brown. (The meat does not need to be fully cooked. Just browned.) Remove from pot and set aside.</li>
+            <li>Onions, garlic, and wine: Use tongs & paper towel to remove any excess oil from the pot. Add onion and garlic and sauté until tender, about 3 minutes, scraping the browned bits off the bottom of the pot. Pour wine in to deglaze (*sizzzles*) and cook for about 2 minutes.</li>
+            <li>Go-time: Add short ribs, tomato sauce, salt and crushed red pepper to pot. Use 1/2 cup water to rinse out sauce jar and add to pot. Set Instant Pot to the stew/meat setting (35 mins). When it’s done, let it sit untouched for a natural steam release.</li>
+            <li>Finish up: Remove meat to sheet pan. Shred into bite size pieces, removing bones and any large pieces of fat. Meanwhile, set the Instant Pot to sauté again to reduce/thicken the sauce. Skim any fat off top of sauce and add meat back in. Taste and add salt & pepper if needed.</li>
+            <li>Serve: Serve over cooked pasta or gnocchi. Yummy!</li>
+        </ol>
+</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="easy" id="myDIV5">
+    <span class="close">
+        <i class='bx bx-x'></i>
+        </span>
+        <div class="at">
+            <img id="att" alt="Brussels Sprouts" src="poze/quick small/House-Favorite-Brussels-Sprouts-Square-183x183.png" width="150px">
+                <p id="ast">House Favorite Roasted Brussels Sprouts</p>
+            </div>
+            <p id="attt" style="font-style: italic; color: rgb(255, 237, 199);">These House Favorite Brussels Sprouts are the best side veg and are speckled with bright bursts of cranberries and nutty walnuts. The perfect addition to any meal!</p>
+            <ul class="ingrediente"><p style="color:yellow">Ingredients:</p>
+                <li>one 12 oz. package raw brussels sprouts, halved</li>
+                <li>2 tablespoons olive oil</li>
+                <li>a pinch of salt and pepper</li>
+                <li>a handful of walnuts</li>
+                <li>a handful of dried cranberries</li>
+                <li>1 teaspoon Dijon mustard</li>
+                <li>2 tablespoons maple syrup</li>
+                <li>extra olive oil, more salt and pepper, maybe some red pepper flakes if you want to spice things up</li>
+            </ul>
+            <ol id="instructiuni"><p style="color: yellow; font-size: large;"><b>INSTRUCTIONS:</b></p>
+                <li>Preheat the oven to 425 degrees. Place brussels sprouts cut-side down directly on a baking sheet. Drizzle with oil and sprinkle with salt and pepper.</li>
+                <li>Roast brussels sprouts for 15-20 minutes, until cut sides are very brown and some of the leaves are crispy. Add walnuts, mustard, and maple; return to oven for 5-10 minutes to get the walnuts toasted. (You can choose to either add the sauce now, or when the pan comes out of the oven in step 3. If you add it now, it gets kind of baked into the brussels, but if you add it when they’re done baking, it’ll be a little more saucy. I like it both ways. Your choice!)</li>
+                <li>Remove from oven. Toss with cranberries directly on the baking sheet. Season and serve immediately. Yummy!</li>
+            </ol>
+</div>
+        </div>
+</div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="easy" id="myDIV6">
+    <span class="close">
+        <i class='bx bx-x'></i>
+        </span>
+        <div class="at">
+            <img id="att" alt="mac and cheese" src="poze/quick small/Instant-Pot-Mac-and-Cheese-Square-183x183.jpg" width="150px">
+                <p id="ast">Instant Pot Mac And Cheese</p>
+            </div>
+            <p id="attt" style="font-style: italic; color: rgb(255, 237, 199);">Instant Pot Mac and Cheese – made with just 5 real food ingredients. This is SO MUCH BETTER (and easier) than any mac and cheese I’ve ever had! Unreal.</p>
+            <ul class="ingrediente"><p style="color:yellow">Ingredients:</p>
+                <li>1 pound uncooked elbow pasta</li>
+                <li>4 cups water</li>
+                <li>1 teaspoon salt</li>
+                <li>3 tablespoons butter, cut into small pieces</li>
+                <li>2 1/2 cups shredded cheese</li>
+                <li>up to 1/2 cup whole milk</li>
+            </ul>
+            <ol id="instructiuni"><p style="color: yellow; font-size: large;"><b>INSTRUCTIONS:</b></p>
+                <li>Noodles: Put the pasta, water, and salt into the Instant Pot. Cook for 4 minutes using the manual function. Quick release the steam so your noodles don’t get overcooked. </li>
+                <li>Cheese: Gently stir in the butter until melted. Add the cheese and milk (use 2-3 tablespoons of milk at a time, as needed, up to 1/2 cup). Add more seasoning or liquid if necessary. For best results, let it sit for 5-10 minutes to let it thicken up a bit. Enjoy. It’s so, so good.</li>
+            </ol>
+</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="easy" id="myDIV7">
+    <span class="close">
+        <i class='bx bx-x'></i>
+        </span>
+        <div class="at">
+            <img id="att" alt="pork" src="poze/quick small/Pineapple-Pork-Square-183x183.png" width="150px">
+                <p id="ast">Pineapple Pork With Coconut Rice And Fine Herbs</p>
+            </div>
+            <p id="attt" style="font-style: italic; color: rgb(255, 237, 199);">Sticky-sweet pork, juicy pineapple, fresh herbs, jalapeño, and crispy onions all served over a bed of fluffy coconut rice. SO GOOD!</p>
+            <ul class="ingrediente"><p style="color:yellow">Pork:</p>
+                <li>1/4 to 1/2 cup teriyaki sauce (I like the SoyVay brand!)</li>
+                <li>1 pound thinly sliced pork tenderloin (you can buy this pre-cut at a lot of stores, sometimes labeled as “stir fry”)</li>
+                <li>1–2 cups fresh pineapple chunks</li>
+                <li>olive oil for sautéing</li>
+            </ul>
+            <ul class="ingrediente"><p style="color:yellow">Rice:</p>
+                <li>one 14-ounce can full fat coconut milk</li>
+                <li>1 1/2 cups water</li>
+                <li>2 cups jasmine rice</li>
+            </ul>
+            <ul class="ingrediente"><p style="color:yellow">Extra Toppings:</p>
+                <li>lime zest</li>
+                <li>cilantro</li>
+                <li>thinly sliced jalapeño</li>
+                <li>crunchy onions</li>
+            </ul>
+            <ol id="instructiuni"><p style="color: yellow; font-size: large;"><b>INSTRUCTIONS:</b></p>
+                <li>Prep: Marinate the pork with 1/4 cup of the sauce for 2-3 hours, or a full day. This is low-key and low-stress. Just do it whenever you think of it.</li>
+                <li>Rice: Add the rice ingredients to an Instant Pot. Cook on high pressure for 3 minutes, followed by a natural pressure release for 10-15 minutes (just let it sit there). Release the steam, fluff with a fork, season with a little salt, and attempt not to eat the whole thing.</li>
+                <li>Pork: Heat a tablespoon of olive oil in a nonstick skillet or grill pan over medium high heat. Add *just* the pork, discarding the excess sauce – if you add all the sauce with it, it will steam the pork instead of caramelizing it. Leave the pork undisturbed in the hot pan for a few minutes at a time to get better caramelization. Throw the pineapple in there and let it get saucy and caramelized, too. Add a few additional tablespoons of sauce AFTER you’ve gotten it nice and brown.</li>
+                <li>Serve: Top your luscious rice with a scoop of the saucy pineapple pork and finish with lime zest, cilantro, crunchy onions, and little slices of jalapeño.</li>
+            </ol>
+</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="easy" id="myDIV8">
+    <span class="close">
+        <i class='bx bx-x'></i>
+        </span>
+    <div class="at">
+        <img id="att" alt="cookies" src="poze/quick small/Strawberry-White-Chocolate-Chip-Cookies-Square-183x183.jpg" width="150px">
+            <p id="ast">Strawberry White Chocolate Cookies</p>
+        </div>
+        <p id="attt" style="font-style: italic; color: rgb(255, 237, 199);">These are HUGE Strawberry White Chocolate Cookies speckled with creamy and rich white chocolate chips and beautifully balanced with tart freeze-dried strawberries. Grab your baking essentials and let’s go! </p>
+        <ul class="ingrediente"><p style="color:yellow">Ingredients:</p>
+            <li>1/2 cup butter (I usually use salted), softened</li>
+            <li>1/2 cup packed light brown sugar</li>
+            <li>1/4 cup granulated sugar</li>
+            <li>1 egg</li>
+            <li>1 teaspoon vanilla extract</li>
+            <li>1 1/4 cups and 2 tablespoons flour (see notes section for weight in grams)</li>
+            <li>3/4 teaspoon baking soda</li>
+            <li>1/2 teaspoon salt</li>
+            <li>1/2–3/4 cup freeze-dried strawberries</li>
+            <li>1/2 cup white chocolate chips</li>
+        </ul>
+        <ol id="instructiuni"><p style="color: yellow; font-size: large;"><b>INSTRUCTIONS:</b></p>
+            <li>Preheat the oven to 350 degrees F. </li>
+            <li>Using a stand mixer or an electric hand mixer, combine the butter with the sugars until creamy.</li>
+            <li>Add the egg and vanilla; mix until just combined.</li>
+            <li>Add the flour, baking soda, and salt; mix until just combined.</li>
+            <li>Fold in the white chocolate chips. Crush the strawberry pieces gently by hand, not into powder but just into small chunks. Fold strawberry pieces into the dough.</li>
+            <li>Roll into balls (9-12 total) and bake on a parchment-lined baking sheet for 9-11 minutes depending on the size of your cookies. I usually do this in two batches. At 9-10 minutes, the cookies will be puffed up slightly – they’re not going to stay like that! You’ll want to let them sit out for a few minutes so they can sink back down and firm up into soft, dense, buttery, delicious little miracle cookies.</li>
+        </ol>
+</div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+
+
+
+                                                        <!--SIDEBAR HIDDEN RECIPES-->
+
+
+<div class="container-fluid-trei" id="c3container">
+<div class="row">
+    <div class="col-12">
+        <h1 id="names">Baked goods</h1>
+    </div>
+    <div class="col-lg col-sm">
+        <div class="recipecard">
+            <img src="poze/sidebar/Lemon-Zucchini-Bread-5.jpg" alt="bread" height="450px" width="400px">
+            <h3 id="recipetitle">Lemon Poppyseed Zucchini Bread</h1>
+        <div class="reciperating">
+            <p>Lemon Poppyseed Zucchini Bread with zucchini, brown sugar, zested lemons, olive oil, ginger, and poppyseeds. The most healing breakfast or snack!</p>
+                <p style="color:#fff">68 REVIEWS / 4.2 Good</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star" style="color: rgb(236, 232, 222)"></span>
+                <span class="fa fa-star" style="color:rgb(236, 232, 222)"></span>
+        </div>
+        </div>
+
+                <ul style="font-size: 22px;" class="ingredients2">
+                    <p id="instru">Ingredients:</p>
+                    <li>3 cups grated zucchini (about 2 zucchini)</li>
+                    <li>grated zest of 2 large lemons</li>
+                    <li>2 teaspoons vanilla extract</li>
+                    <li>3 large eggs</li>
+                    <li>1 cup extra-virgin olive oil</li>
+                    <li>2 cups brown sugar (packed softly)</li>
+                    <li>2 cups all-purpose flour</li>
+                    <li>1 teaspoon salt</li>
+                    <li>1 teaspoon baking powder</li>
+                    <li>1/2 teaspoon baking soda</li>
+                    <li>3 tablespoons poppy seeds</li>
+                    <li>optional: tiny pinch of nutmeg</li>
+                    <li>optional: a small grated piece of fresh ginger</li>
+                </ul>
+                <div class="extra">
+                    <div class="type">
+                    <i class="fa-solid fa-hourglass fa-xl" style="color: yellow"></i>
+                    <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">PREP TIME:   </span>20 mins</p>
+                    </div>
+                    <div class="type">
+                    <i class="fa-regular fa-folder-open fa-xl" style="color: yellow"></i>
+                    <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">CATEGORY:   </span>Baked Goods</p>
+                    </div>
+                    <div class="type">
+                    <i class="fa-solid fa-stopwatch fa-xl" style="color: yellow"></i>
+                    <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">COOK TIME:   </span>1 hour 10 mins</p>
+                    </div>
+                    <div class="type">
+                    <i class="fa-regular fa-hand fa-xl" style="color: yellow"></i>
+                    <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">METHOD:   </span>Bake</p>
+                    </div>
+                    <div class="type">
+                    <i class="fa-regular fa-flag fa-xl" style="color: yellow"></i>
+                    <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">CUISINE:   </span>American</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+
+    <div class="col-lg-7 col-sm">
+        <div class="recipeinstructions">
+            <h3 id="instru">INSTRUCTIONS</h3>
+            <p>1.Drain zucchini: Preheat the oven to 350. In a small mixing bowl, mix the zucchini with 1/4 cup brown sugar. Transfer the mixture to a fine-mesh strainer set over the mixing bowl. Fill another small bowl with water and set it directly on top of the zucchini so that it is pushing down, pressing the water out into the bowl below.</p>
+            <iframe id="vimeo" src="https://player.vimeo.com/video/449726353?h=5c79ca9c84&title=0&byline=0&portrait=0" width="400" height="200" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+            <p>2.Add wet ingredients: Line a 9×5 loaf pan with parchment paper. Whisk together the remaining brown sugar, eggs, lemon zest, and vanilla until well blended. Beat in the olive oil gradually, whisking it in until it’s thoroughly incorporated. </p>
+            <iframe id="vimeo" src="https://player.vimeo.com/video/449726564?h=32efda84c5&title=0&byline=0&portrait=0" width="400" height="200" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            <p>3.Add dry ingredients: Stir in the flour, salt, baking powder, baking soda, poppy seeds, nutmeg, and ginger until just combined. Add the pressed zucchini to the batter and stir it in gently until evenly incorporated.</p>
+            <iframe id="vimeo" src="https://player.vimeo.com/video/449726746?h=951983bd39&title=0&byline=0&portrait=0" width="400" height="200" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            <p>4.Bake: Pour the batter into the prepared pan. Bake on the middle rack of the oven for about 1 hour and 10 minutes. The outer crust of the bread will be firm to the touch and on the darker side of golden brown (see FAQs).</p>
+            <iframe id="vimeo" src="https://player.vimeo.com/video/449726165?h=874e7831ee&title=0&byline=0&portrait=0" width="400" height="200" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            <p>5.Eat: Cool the bread in the pan for about 20 minutes. Remove, cut, and serve (but also see FAQs about chilling the cake which is unusually delicious).</p>
+            <iframe id="vimeo" src="https://player.vimeo.com/video/449726832?h=b3adcb44c0&title=0&byline=0&portrait=0" width="400" height="200" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        
+</div>
+</div>
+
+
+
+<div class="container-fluid-patru" id="c4container">
+<div class="row">
+        <div class="col-12">
+            <h1 id="names">Fruity&Veggie Goods</h1>
+        </div>
+    <div class="col-lg col-sm">
+            <div class="recipecard">
+                <img src="poze/sidebar/Peach-Cobbler-Recipe.jpg" alt="peach" height="450px" width="400px">
+                <h3 id="recipetitle">The Best Peach Cobbler</h1>
+            <div class="reciperating">
+                <p>Best summer dessert ever! Made with fresh peaches, sugar, and a topping that bakes like slightly underbaked cookie dough, with crunchy sugar broiled on top.</p>
+                    <p style="color: #fff;">194 REVIEWS / 5.0 Excellent</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+            </div>
+            </div>
+                    <ul style="font-size: 22px;" class="ingredients2">
+                        <p id="instru">Ingredients:</p>
+                        <span style="color: yellow;">Peach Filling:</span>
+                        <li>5–6 large fresh yellow peaches, sliced</li>
+                        <li>1/4 cup sugar</li>
+                        <span style="color: yellow;">Cobbler Topping:</span>
+                        <li>1/2 cup salted butter, melted</li>
+                        <li>3/4 cup sugar</li>
+                        <li>1 teaspoon vanilla</li>
+                        <li>1 cup flour</li>
+                        <li>1 teaspoon baking powder</li>
+                        <li>a pinch of salt</li>
+                        <li>1/4 cup turbinado sugar (optional, but really nice)</li>
+                        <li>whipped cream or vanilla ice cream for serving</li>
+                    </ul>
+              
+                    <div class="extra">
+                        <div class="type">
+                        <i class="fa-solid fa-hourglass fa-xl" style="color: yellow;"></i>
+                        <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">PREP TIME:   </span>15 mins</p>
+                        </div>
+                        <div class="type">
+                        <i class="fa-regular fa-folder-open fa-xl" style="color: yellow;"></i>
+                        <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">CATEGORY:   </span>Fruity&Veggie Goods</p>
+                        </div>
+                        <div class="type">
+                        <i class="fa-solid fa-stopwatch fa-xl" style="color: yellow;"></i>
+                        <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">COOK TIME:   </span>45 mins</p>
+                        </div>
+                        <div class="type">
+                        <i class="fa-regular fa-hand fa-xl" style="color: yellow"></i>
+                        <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">METHOD:   </span>Bake</p>
+                        </div>
+                        <div class="type">
+                        <i class="fa-regular fa-flag fa-xl" style="color: yellow"></i>
+                        <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">CUISINE:   </span>American</p>
+                        </div>
+                    </div>
+
+    </div>
+                
+    
+        <div class="col-lg-7 col-sm">
+            <div class="recipeinstructions">
+                <h3 id="instru">INSTRUCTIONS</h3>
+                <p>1.Preheat the oven to 350 degrees. Smear the bottom of 9×13 pan with a little bit of butter. Add peaches and sugar, and mix directly in the pan.</p>
+                <iframe src="https://player.vimeo.com/video/432305997?h=b004ff3280&title=0&byline=0&portrait=0" width="400" height="160" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <p>2.Mix the butter, sugar, vanilla, flour, baking powder, and salt until a cookie-dough-like batter forms.</p>
+                <iframe src="https://player.vimeo.com/video/432306127?h=2f538dba23&title=0&byline=0&portrait=0" width="400" height="160" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <p>3.Place scoops of the mixture over the top of the peaches. Spread with a spoon or with your fingers – no need for perfection here.</p>
+                <iframe src="https://player.vimeo.com/video/432306251?h=e938042a3e&title=0&byline=0&portrait=0" width="400" height="160" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <p>4.Bake for 30 minutes. At this point it should be juicy and bubbly around the sides – if not, see notes.</p>
+                <iframe src="https://player.vimeo.com/video/432306293?h=65c5bef983&title=0&byline=0&portrait=0" width="400" height="160" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <p>5.Sprinkle the top with turbinado sugar. Bake another 10-15 minutes and then finish with a few minutes under the broiler (475-ish) for a few minutes to get it golden brown and slightly crunchy on top. (Just keep a close eye on it because it can burn quickly.)</p>
+                <iframe src="https://player.vimeo.com/video/432306334?h=1eb9e684e5&title=0&byline=0&portrait=0" width="400" height="160" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <p>6.To get a thick saucy peach base, let it stand for 20-30 minutes before serving with some vanilla ice cream. But good luck with that. 😅</p>
+                <iframe src="https://player.vimeo.com/video/432306395?h=bc1021ec3d&title=0&byline=0&portrait=0" width="400" height="160" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+</div>
+</div>
+
+
+
+<div class="container-fluid-cinci" id="c5container">
+    <div class="row">
+            <div class="col-12">
+            <h1 id="names">Soups</h1>
+            </div>
+        <div class="col-lg col-sm">
+                <div class="recipecard">
+                    <img src="poze/sidebar/Chicken-Tortilla-Soup-2.jpg" alt="peach" height="450px" width="400px">
+                    <h3 id="recipetitle">Chicken Tortilla Soup</h1>
+                <div class="reciperating">
+                    <p>Simple Homemade Tomato Soup with carrots, onions, garlic, tomatoes, broth, and bacon for deliciously rich flavor. It’s super easy to make and is bound to be your next cold weather favorite!</p>
+                        <p style="color: #fff;">62 REVIEWS / 4.8 Good</p>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star" style="color:rgb(236, 232, 222)"></span>
+                </div>
+                </div>
+                        <ul style="font-size: 22px;" class="ingredients2">
+                            <p id="instru">Ingredients:</p>
+                            <li>2 tablespoons olive oil</li>
+                            <li>1 red onion, diced</li>
+                            <li>4 cloves garlic, minced</li>
+                            <li>1 jalapeño, minced</li>
+                            <li>1–2 teaspoons cumin and/or chili powder (you can make this as spiced as you like)</li>
+                            <li>a pinch of dried oregano (Mexican if you can find it)</li>
+                            <li>one 28-ounce can crushed tomatoes</li>
+                            <li>2 1/2 – 3 cups vegetable broth</li>
+                            <li>1 pound boneless skinless chicken thighs</li>
+                            <li>1 1/2 teaspoons salt</li>
+                            <li>1 can pinto beans, drained and rinsed</li>
+                            <li>crispy tortilla strips, cilantro, lime, cotija or sour cream for topping</li>
+                        </ul>
+        
+                  
+                        <div class="extra">
+                            <div class="type">
+                            <i class="fa-solid fa-hourglass fa-xl" style="color: yellow"></i>
+                            <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">PREP TIME:   </span>10 mins</p>
+                            </div>
+                            <div class="type">
+                            <i class="fa-regular fa-folder-open fa-xl" style="color: yellow"></i>
+                            <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">CATEGORY:   </span>Soups</p>
+                            </div>
+                            <div class="type">
+                            <i class="fa-solid fa-stopwatch fa-xl" style="color: yellow"></i>
+                            <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">COOK TIME:   </span>20 mins</p>
+                            </div>
+                            <div class="type">
+                            <i class="fa-regular fa-hand fa-xl" style="color: yellow"></i>
+                            <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">METHOD:   </span>Stovetop</p>
+                            </div>
+                            <div class="type">
+                            <i class="fa-regular fa-flag fa-xl" style="color: yellow"></i>
+                            <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">CUISINE:   </span>Mexican-Inspired</p>
+                            </div>
+                        </div>
+    
+        </div>
+                    
+        
+            <div class="col-lg-7 col-sm">
+                <div class="recipeinstructions">
+                    <h3 id="instru">INSTRUCTIONS</h3>
+                    <p>1.Heat oil in a soup pot over medium heat. Add onion, garlic, jalapeño, and seasonings; sauté for about 5-10 minutes or until very soft and fragrant.</p>
+                    <iframe src="https://player.vimeo.com/video/636609814?h=b31e16cea7&title=0&byline=0&portrait=0" width="400" height="270" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <p>2.Add the crushed tomatoes, broth, chicken thighs, and salt. Simmer for 10-15 minutes or until chicken thighs are cooked through.</p>
+                    <iframe src="https://player.vimeo.com/video/636593443?h=adea0e8960&title=0&byline=0&portrait=0" width="400" height="270" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <p>3.Remove chicken from the pot. When cool enough to handle, shred and chop into small bite-sized pieces. Stir back into the pot with the beans. Add more broth depending on how thin you like it. Top with EVERYTHING. Crispy tortilla strips, cilantro, cotija, crema, lime, etc.</p>
+                    <iframe src="https://player.vimeo.com/video/636595028?h=760b20fbb7&title=0&byline=0&portrait=0" width="400" height="270" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <ul style="font-size: 20px;" id="notes">
+                        <p style="color: yellow; font-weight: 900; font-size: 30px;">Notes:</p>
+                        <li>Instant Pot Instructions: Heat the oil and sauté the onion, garlic, and jalapeño for 5-10 minutes until soft and fragrant. Add in the crushed tomatoes, broth, chicken thighs, and salt. Seal the lid and set the cook time to 15 minutes with 10 minutes of natural pressure release. Remove the chicken from the pot to shred. Stir the shredded chicken back into the soup along with the pinto beans.</li>
+                        <li>Slow Cooker Instructions: Heat the oil in a pan on the stove and sauté the onion, garlic, and jalapeño for 5-10 minutes until soft and fragrant. Transfer to the slow cooker and add in the crushed tomatoes, broth, chicken thighs, and salt. Stir and cook on low for 6-8 hours. Remove the chicken from the slow cooker to shred. Stir the shredded chicken back into the soup along with the pinto beans.</li>
+                    </ul>
+                </div>
+                </div>
+                
+    </div>
+</div>
+
+
+
+<div class="container-fluid-sase" id="c6container">
+    <div class="row">
+        <div class="col-12">
+        <h1 id="names">Meals</h1>
+        </div>
+        <div class="col-lg col-sm">
+            <div class="recipecard">
+                <img src="poze/sidebar/Chicken-Sweet-Potato-Meal-Prep-Bowls-7.jpg" alt="bread" height="450px" width="400px">
+                <h3 id="recipetitle">Spicy Chicken And Sweet Potato Magic Bowls</h1>
+            <div class="reciperating">
+                <p>Spicy Chicken and Sweet Potato Meal Prep Magic! Just chicken, sweet potatoes, broccoli, avocado, and seasonings. 3 big sheet pans + 45 minutes = healthy meals for a week!</p>
+                    <p style="color:#fff">190 REVIEWS / 4.8 Good</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star" style="color:rgb(236, 232, 222)"></span>
+            </div>
+            </div>
+    
+                    <ul style="font-size: 22px;" class="ingredients2">
+                        <p id="instru">Ingredients:</p>
+                        <li>2 lbs. boneless skinless chicken breasts, cut into small pieces</li>
+                        <li>3 tablespoons spicy seasoning mix</li>
+                        <li>a few tablespoons of olive oil</li>
+                        <li>3 sweet potatoes, peeled and diced</li>
+                        <li>5–6 cups broccoli florets (broccolini FTW)</li>
+                        <li>coarse sea salt and freshly cracked pepper</li>
+                        <li>avocado / hummus / lemon juice / chives / olive oil for serving</li>
+                    </ul>
+
+                    <div class="extra">
+                        <div class="type">
+                        <i class="fa-solid fa-hourglass fa-xl" style="color: yellow"></i>
+                        <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">PREP TIME:   </span>15 mins</p>
+                        </div>
+                        <div class="type">
+                        <i class="fa-regular fa-folder-open fa-xl" style="color: yellow"></i>
+                        <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">CATEGORY:   </span>Fruity&Veggie Goods</p>
+                        </div>
+                        <div class="type">
+                        <i class="fa-solid fa-stopwatch fa-xl" style="color: yellow"></i>
+                        <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">COOK TIME:   </span>45 mins</p>
+                        </div>
+                        <div class="type">
+                        <i class="fa-regular fa-hand fa-xl" style="color: yellow"></i>
+                        <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">METHOD:   </span>Bake</p>
+                        </div>
+                        <div class="type">
+                        <i class="fa-regular fa-flag fa-xl" style="color: yellow"></i>
+                        <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">CUISINE:   </span>American</p>
+                        </div>
+                    </div>
+        
+        </div>
+                
+    
+        <div class="col-lg-7 col-sm">
+            <div class="recipeinstructions">
+                <h3 id="instru">INSTRUCTIONS</h3>
+                <p>1.Preheat the oven to 425 degrees. Toss the chicken pieces with the spices and a quick stream of olive oil. Stir to combine; store in the fridge for about 30 minutes while you prep other ingredients.</p>
+                <iframe src="https://player.vimeo.com/video/415537041?h=5c6bbaf33e&title=0&byline=0&portrait=0" width="400" height="235" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <p>2.Arrange the vegetables on their own sheet pans (preferably ones with edges to catch drips, etc.). Drizzle with olive oil and sprinkle generously with salt. Arrange the chicken on a separate sheet pan. </p>
+                <iframe src="https://player.vimeo.com/video/415530089?h=0c24d0b34e&title=0&byline=0&portrait=0" width="400" height="235" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <p>3.Bake all ingredients for 12-15 minutes. Remove the broccoli and chicken. Stir sweet potatoes and roast another 15 minutes or so.</p>
+                <iframe src="https://player.vimeo.com/video/415530308?h=44ed88bc39&title=0&byline=0&portrait=0" width="400" height="235" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <p>4.Done! Divide your servings out into containers and be happy you have meal starters ready for the week! 😀</p>
+                <iframe src="https://player.vimeo.com/video/415530391?h=ff43318ce4&title=0&byline=0&portrait=0" width="400" height="235" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+    </div>
+</div>
+  
+
+
+<div class="container-fluid-sapte" id="c7container">
+    <div class="row">
+        <div class="col-12">
+            <h1 id="names">Desserts</h1>
+        </div>
+        <div class="col-lg col-sm">
+            <div class="recipecard">
+                <img src="poze/sidebar/Homemade-Oreos-3.jpg" alt="bread" height="450px" width="400px">
+                <h3 id="recipetitle">Old School Homemade Oreos</h1>
+            <div class="reciperating">
+                <p>Life-changing Homemade Oreos that are soft, buttery, moist, perfectly dense chocolate cookies stuffed with cream cheese frosting. SO GOOD. </p>
+                    <p style="color:#fff">107 REVIEWS / 5.0 Excellent</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+            </div>
+            </div>
+    
+                    <ul style="font-size: 22px;" class="ingredients2">
+                        <p id="instru">Ingredients:</p>
+                        <span style="color: yellow;">Cookies:</span>
+                        <li>2 eggs</li>
+                        <li>3/4 cup butter, room temperature</li>
+                        <li>1/2 teaspoon vanilla</li>
+                        <li>1 box Devil’s Food cake mix</li>
+                        <span style="color: yellow;">Frosting:</span>
+                        <li>8 oz. cream cheese</li>
+                        <li>1/2 cup butter</li>
+                        <li>1 tsp vanilla</li>
+                        <li>2 cups powdered sugar</li>
+                    </ul>
+                    <div class="extra">
+                        <div class="type">
+                        <i class="fa-solid fa-hourglass fa-xl" style="color: yellow"></i>
+                        <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">PREP TIME:   </span>15 mins</p>
+                        </div>
+                        <div class="type">
+                        <i class="fa-regular fa-folder-open fa-xl" style="color: yellow"></i>
+                        <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">CATEGORY:   </span>Desserts/Treats</p>
+                        </div>
+                        <div class="type">
+                        <i class="fa-solid fa-stopwatch fa-xl" style="color: yellow"></i>
+                        <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">COOK TIME:   </span>30 mins</p>
+                        </div>
+                        <div class="type">
+                        <i class="fa-regular fa-hand fa-xl" style="color: yellow"></i>
+                        <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">METHOD:   </span>Bake</p>
+                        </div>
+                        <div class="type">
+                        <i class="fa-regular fa-flag fa-xl" style="color: yellow"></i>
+                        <p style="color: #fff; font-weight: 600; font-style: oblique;"><span style="font-weight: 900;">CUISINE:   </span>American/UK</p>
+                        </div>
+                    </div>
+                    
+                
+        </div>
+                
+    
+        <div class="col-lg-7 col-sm">
+            <div class="recipeinstructions">
+                <h3 id="instru">INSTRUCTIONS</h3>
+                <p>1.Beat cookie ingredients together with an electric mixer until combined. </p>
+                <iframe src="https://player.vimeo.com/video/489446974?h=dc55db0a3c&title=0&byline=0&portrait=0" width="400" height="255" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <p>2.Preheat the oven to 350 degrees. Roll into small one or two tablespoon balls. Place on a baking sheet. (Chill the dough for about 30 minutes if it’s too soft to roll.) </p>
+                <iframe src="https://player.vimeo.com/video/489447191?h=ae29bb6ae0&title=0&byline=0&portrait=0" width="400" height="255" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <p>3.Bake for 8-10 minutes. Remove and allow a few minutes to cool in order to move to the next step.</p>
+                <iframe src="https://player.vimeo.com/video/489447357?h=82fefc021a&title=0&byline=0&portrait=0" width="400" height="255" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <p>4.Beat frosting ingredients together with an electric mixer. Using a plastic bag with the end cut off, or a pastry bag, pipe a swirl of frosting onto one cookie and gently press a same-size cookie on top. Voila! Store in the refrigerator – or on  your cold porch if you live in Minnesota!</p>
+                <iframe src="https://player.vimeo.com/video/489447360?h=06bd5077e0&title=0&byline=0&portrait=0" width="400" height="255" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+    </div>
+</div>
+
+<!--FOOTER-->
+                                                                                     <!--SIGN-UP/FOLLOW-->
+<div class="followsign"> 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4 col-sm-6">
+                <div class="followicons">
+                    <h3 id="textfs">Connect with us</h3>
+                    <a href="https://www.instagram.com/" id="faa" class="fa fa-instagram"></a>
+                    <a href="https://www.facebook.com/" id="faa" class="fa fa-facebook"></a>
+                    <a href="https://www.twitter.com/" id="faa" class="fa fa-twitter"></a>
+                    <a href="https://www.youtube.com/" id="faa" class="fa fa-youtube"></a>
+                    <a href="https://www.reddit.com/" id="faa" class="fa fa-reddit"></a>
+                </div>
+            </div>
+
+            <div class="col-8 col-sm-6">
+                <div class="signupform">
+                    <form class="signup" onsubmit="return validateForm()">
+                        <legend id="textfs">Signup for email updates!</legend>
+                        <input type="text" id="fname" name="fname" placeholder="First Name">
+                        <input type="email" id="email" name="email" placeholder="Email">
+                        <input type="submit" id="submit" name="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!--SECTION-ABOUT------>
+<div class="container-fluid-about hidden" id="c8container">
+    <div class="row">
+      <div class="col-xs-6 col-md-6 col-lg-6">
+        <h3 id="wsr">Send a comment!</h3>
+        <form id="formabout" action="" method="get" onsubmit="return validateForm()">
+
+          <label for="comment">Comment:</label><br>
+          <textarea style="background: transparent; color: #fff; font-size: large;" id="comment" name="comment" rows="4" cols="50"></textarea><br><br>
+  
+          <label for="fname">Name:</label><br>
+          <input type="text" id="fname" name="name" required><br><br>
+  
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required><br><br>
+  
+          <input type="checkbox" class="medium" id="save-info" name="save-info">
+          <label style="font-size: large;" for="save-info">Save my name and email in this browser for the next time I comment.</label><br><br>
+          <input type="submit" style="width: 120px;" value="Send" id="submit">
+        </form>
+      </div>
+  
+      <div class="col-xs-6 col-md-6 col-lg-6">
+        <h3 style="text-align: center;" id="wsr">About Us</h3>
+        <p id="aboutus">A decade ago, we set out to bring cooks together from all over to exchange recipes and to support each other in the kitchen. We wanted to create a buzzing place for others who do what we do all day long: talk about food! Since we started Soul Recipes (we cook 52 weeks a year, get it?), tens of millions of cooks and eaters have found their way to the site.
+  
+          On Soul Recipes you can find thousands of recipes submitted by our community and cooked by our editors in our very own test kitchens. Our recipes and articles are James Beard Award winning, our cookbooks are New York Times bestsellers, our Instagram is loved and followed by millions, and our community has grown to over 13 million people.
+  
+          In 2013 we launched our shop to bring like-minded makers and artisans together with all of us. Today we curate the great things that allow you to cook and eat thoughtfully, and we’ve grown to include the home goods and crafts that support joyful living—and we’ve even started making some of these products with you! Great food isn't just about ingredients, it's about everything that makes a meal—it's the platter you serve tacos on; the composter in your kitchen; the knife you take on picnics. And joyful living goes beyond just the kitchen; it’s the beeswax candles on your table, the wreath on your doorway, the linen throw that accents your couch.
+  
+          We envision Soul Recipes as the one place you can see thousands of test kitchen-approved recipes, shop the kitchenware you need to make them, and discuss the results with like-minded people. That same destination can be the go to when you need a birthday gift for a food-obsessed friend. The place to look for great table linens. The place to window-shop and daydream. We depend on—and we look forward to—your ideas, feedback, and support. So get ready for some inspiration and come hang out!
+  
+          We look forward to cooking with you!</p>
+      </div>
+    </div>
+  </div>
+
+
+
+<!--footer buttons-->
+<div class="container-fluid-footer">
+<div class="row">
+    <div class="botbtn">
+        <a id="botbtn" href="#">TERMS & CONDITIONS</a>
+        <a id="botbtn" href="#">PRIVACY POLICY</a>
+        <a onclick="afiseazaAbout(event)" id="botbtn" href="#c8container">ABOUT</a>
+        <a id="botbtn" href="#">CONTACT</a>
+    </div>
+    </div>
+</div>
+</div>
+
+
+
+
+<button onclick="topFunction()" id="myButton" title="Go to top">
+<i class="fa-regular fa-circle-up fa-sm"></i>
+</button>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1190 @@
+body{
+    background-image: url(poze/background.jpg);
+    background-size:cover;
+    background-attachment: fixed;
+}
+/**TOP HEADER**/
+.topheader{
+    backdrop-filter: blur(15px);
+    padding-left: 2%;
+    box-shadow: -10px 1px 35px -10px rgba(243, 243, 243, 0.884) inset;
+    width: 100%;
+    display: flex;
+    border-bottom: 2px solid #fff;
+}
+#logo{   
+    text-decoration: none;
+    color: rgb(240, 240, 158);
+    font-family: 'Dancing Script';
+    font-size: 60px;
+}
+.quote{
+    font-family: 'Dancing Script';
+    font-weight: 600;
+    font-size: x-large;
+    display: flex;
+    flex-direction: column;
+}
+#thomas{
+    color: #fff;
+}
+#searchbar{
+    box-shadow: 0px 0px 90px 0px rgb(26, 20, 20) inset;
+    font-size: large;
+    border: 1px solid #fff;
+    font-style: italic;
+    color: #fff;
+    margin-left: 3%;
+    margin-top: 2.8%;
+    background: transparent;
+    border-radius: 50px;
+    width: 20%;
+    height: 35px;
+}
+#searchbar::placeholder{
+    padding-left: 4%;
+    font-size: larger;
+    font-weight: 900;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fff;
+}
+.navbar{
+    display: flex;
+    flex:auto;
+    justify-content: space-evenly;
+}
+.nav-button{
+    font-style: oblique;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(231, 218, 200);
+    text-shadow: 9px 9px 5px black;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    font-weight: 900;
+    cursor: pointer;
+}
+.btnLogin-popup{
+    font-style: oblique;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 9px 9px 5px black;
+    font-weight: 900;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    color: rgb(231, 218, 200);
+    cursor: pointer;  
+}
+
+.nav-button:hover,.btnLogin-popup:hover{
+    color: rgb(247, 228, 143);
+    text-shadow: none;
+}
+
+/**LOGIN-WRAPPER**/
+.btnLogin-popup::before{
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    opacity: .85; 
+}
+.wrapper{            
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style:oblique;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 550px;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(15px);
+    box-shadow: -1px 0 10px rgba(0, 0, 0, .2);
+    border: 2px solid rgba(255, 255, 255, .1);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    opacity: 0;
+    pointer-events: none;
+}
+.wrapper.active-popup{
+    opacity: 1;
+    pointer-events: auto;
+}
+.icon-close{ 
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+.icon-close i{
+    font-size: 50px;
+    color: #fff;
+}
+.wrapper .logreg-box {
+    width: 100%;
+}
+.wrapper .form-box.login{
+    display: block;
+}
+.wrapper.active .form-box.login{
+    display: none;
+}
+.wrapper .form-box.register{
+    display: none;
+} 
+.wrapper.active .form-box.register{
+    display: block;
+}  
+.logreg-box .logreg-title{
+    text-align: center;
+    margin-bottom: 40px;
+    color: #fff;
+}
+.logreg-title h2{
+    font-size: 32px;
+}
+.logreg-title p{
+    font-size: 14px;
+    font-weight: 500;
+}
+.logreg-box .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff; 
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent; 
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    padding-right: 25px;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-110%);
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    pointer-events: none;
+    transition: .3s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+} 
+.input-box .icon{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 19px;
+    color: #fff;
+} 
+.logreg-box .remember-forgot{
+    font-size: 17px;
+    color: #fff;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.remember-forgot label input{
+    color: #fff;
+    margin-right: 3px;
+}
+.remember-forgot a{
+    color: #fff;
+    text-decoration: none;
+}
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+.logreg-box .btn{
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    box-shadow: 0 20px 5px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    font-size: 19px;
+    color: #222;
+    font-weight: 900;
+}
+.logreg-box .btn:hover{
+    background: rgb(209, 209, 209);
+}
+.logreg-box .logreg-link{
+    font-size: 14.5px;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 15px;
+}
+.logreg-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.logreg-link p a:hover{
+    text-decoration: underline;
+} 
+.media-options{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+} 
+.media-options a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 60px;
+    background: transparent;
+    border: 2px solid #fff;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    border-radius: 40px;
+    color: #fff;
+    text-decoration: none;
+    transition: .5s;
+}
+.media-options a:hover {
+    background: rgba(255, 255, 255, 0.39);
+}
+.media-options a i {
+    font-size: 22px;
+    margin: 0 8px 1.5px 0;
+}
+.media-options a span{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+
+/*CONTAINER WELCOME CAROUSEL*/
+.container-fluid-carousel{
+    border-bottom: 1px solid #fff;
+}
+.slider-wrapper{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    padding-right: 3%;
+  }
+  .slides-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    scroll-behavior:smooth;
+  }
+  .slide{
+    width: 100%;
+    height: 100%;
+    flex: 1 1 100%;
+  }
+
+/* WebKit */
+.slides-container::-webkit-scrollbar{ 
+    width: 0;
+    height: 0;
+}
+.slide-arrow{
+    border: 1px solid tan;
+    font-size: 3rem;
+    position: absolute;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 89px;
+    font-weight: 900;
+    width: 9%;
+    cursor: pointer;
+    opacity: 1;color: rgb(231, 209, 180);
+    color: rgb(122, 90, 47);
+    transition: opacity 100ms;
+}
+  .slide-arrow:hover{
+    color: white;
+    font-weight: 500;
+    opacity: 0.8;
+    height: 59px;
+    font-size: 2rem;
+  }
+  #slide-arrow-prev{
+    left: 0;
+    background-color: rgb(230, 205, 159);
+    border-radius: 40% 0% 0% 40%;
+  }
+  #slide-arrow-next{
+    padding-left: 6%;
+    width: 8%;
+    right: 0;
+    background-color: rgb(230, 205, 159);
+    border-radius: 0% 40% 40% 0%;
+}
+#slide-arrow-next:hover{background-color: rgb(150, 122, 72);}
+#slide-arrow-prev:hover{background-color: rgb(150, 122, 72);}
+#wsr{
+    color: rgb(240, 240, 158);
+    font-family: 'Satisfy', cursive;
+    font-size: 55px;
+    font-style: oblique;
+}
+.welcome{
+    margin-right: 1%;
+    text-shadow: 5px 10px 5px black;
+    padding-top: 8%;
+    color: #fff;
+}
+#welcome{
+    padding-top: 4%;
+    color: #fff;
+    text-shadow: none;
+    font-weight: 800;
+    font-size: 22px;
+    font-style: oblique;
+    font-family: 'Tsukimi Rounded', sans-serif;
+}
+
+
+
+
+/*SIDEBAR RECIPES*/
+.poze{
+margin-top: 2.2%;
+opacity: 0.65;
+border-radius: 10px 100px / 120px;
+}
+.poze:hover{
+background-color: whitesmoke;
+opacity: 1;
+transform:translateY(-7%);
+transition: 0.3s;
+}
+.numeRetete{
+font-style: oblique;
+color: rgb(255, 238, 202);
+font-family: 'Tsukimi Rounded', sans-serif;
+margin: 0;
+padding: 2%;
+margin-top: 1%;
+font-size: larger;
+}
+
+/*SLIDER*/
+#recipe{
+text-align: center;
+margin-top: 8.5%;
+font-size: xx-large;
+color: #fff;
+font-family: 'Dancing Script';
+}
+.tabelinfo{
+margin-top: 35%;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+opacity: 0.9;
+height: auto;
+width: fit-content;
+color: rgb(247, 243, 213);
+border: 1px solid;
+font-size: larger;
+font-weight: 900;
+}
+.container{
+width: 100%;
+margin-right: 8%;
+margin-top: 2%;
+}
+.ingredients{
+font-weight: 600;
+margin-top: 10%;
+width: 100%;
+color: #fff;
+font-family: 'Tsukimi Rounded', sans-serif;
+font-size: larger;
+}
+#pasta{
+border-radius: 10%;
+width: 100%;
+}
+.titleimage{
+text-align: center;
+font-size: xx-large;
+font-style: italic;
+font-weight: 900;
+color: rgb(255, 238, 202);
+font-family: 'Dancing Script';
+}
+.instructions{
+font-weight: 600;
+margin-top: 2%;
+font-family: 'Tsukimi Rounded', sans-serif;
+font-size: larger;
+color: #fff;
+}
+.ytcontainer{
+text-align: center;
+}
+#yt{
+margin-top: 2%;
+width: 90%;
+height: 310px;
+border-radius: 20px;
+}
+#consider{
+filter: brightness(1.15);
+color: rgb(241, 241, 189);
+font-weight: 600;
+font-style: oblique;
+font-family: Bitter,Georgia,Cambria,Times New Roman,Times,serif;
+}
+.rating{
+font-weight: 800;
+}
+.checked{
+cursor: pointer;
+color: yellow;
+}
+.fa-star{
+cursor: pointer;
+}
+
+
+
+
+/*CARD RECIPES*/
+#latest{
+    backdrop-filter: blur(2px);
+    font-style: oblique;
+    color: #fff;
+    font-family: 'Dancing Script';
+    font-size: 45px;
+    padding: 0.5%;
+    text-align: center;
+    width: auto;
+    font-weight: 900;   
+    margin-top: 3px;
+    box-shadow: -10px 1px 30px -10px rgba(243, 243, 243, 0.884) inset;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+}
+
+.card img{
+    border-radius: 50%;
+}
+.card-title{
+    font-weight: 900;
+    color: rgb(255, 207, 123);
+    border-bottom: 1px solid #fff;
+}
+.card{
+    
+    transform: scaleX(0.99);
+    font-weight: 900;
+    font-style: oblique;
+    font-size: 10px;
+    border: none;
+    box-shadow: 10px 35px 60px 10px rgba(248, 208, 174, 0.719) inset ;
+    text-align: center;
+    background: transparent;
+    font-family: 'Tsukimi Rounded', sans-serif;
+    border-radius: 10%;
+}
+.card:hover{
+    transform: scaleX(1.03); 
+    transition: 0.3s;
+}
+.btn-primary{
+    font-weight: 500;
+    cursor: pointer;
+    font-family: Bitter,Georgia,Cambria,Times New Roman,Times,serif;
+    height: 35px;
+    color: rgb(134, 100, 37);
+    background: rgb(247, 241, 209);
+    border: none;
+}
+.btn-primary:hover{
+    opacity: 1;
+    background: transparent;
+    color: rgb(207, 144, 25);
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+            -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+            inset -4px -4px 6px 0 rgba(255,255,255,.2),
+            inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
+
+#myDIV,#myDIV2,#myDIV3,#myDIV4,#myDIV5,#myDIV6,#myDIV7,#myDIV8{
+    position: absolute;
+    display: none;
+}
+.easy{
+    height: auto;
+    width: 98.7%;
+    position: relative;
+    top: 2207px;
+    z-index: 1;
+    text-align: center;
+    font-family: 'Tsukimi Rounded', sans-serif;
+    font-weight: 500;
+    color: #fff;
+    font-size: large;
+    background:none;
+    backdrop-filter: blur(40px);
+    border: 2px solid #fff;
+    align-items: center;
+    background: transparent;
+    box-shadow: 0px 0px 20px 0px rgba(243, 243, 243, 0.884) inset;
+    border: 2px solid rgba(255, 255, 255, 0.021);
+}
+.ingrediente{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-right: 3%;
+    list-style-type: none;
+}
+#instructiuni{
+    text-align: start;
+}
+.close{
+    position: absolute;
+    font-size: 45px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+#attt{
+    font-weight: 700;
+    text-align: center;
+}
+#att{
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 237, 199);
+}  
+#ast{
+    font-weight: 900;
+    font-style: italic;
+    font-size: x-large;
+    margin-left: 10px;
+    margin-right: auto;
+    color: rgb(240, 240, 158);
+}
+.at{
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+}
+
+
+
+/* COOKBOOK */
+.cookbook{                                                                      
+    box-shadow: 0px 0px 90px 0px rgb(26, 20, 20) inset;
+    backdrop-filter: blur(25px);
+    text-align: center;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    }
+    #book{
+    padding: auto;
+    opacity: 0.7;
+    }
+    #book:hover{
+    opacity: 1;
+    filter: brightness(1.05);   
+    }
+    .srcookbook{
+    padding-top: 5%;
+    color: rgb(247, 241, 209);
+    font-family: Bitter,Georgia,Cambria,Times New Roman,Times,serif;
+    font-size: large;
+    font-style: oblique;
+    }
+    #src{
+    color: #fff;
+    font-size: xx-large;
+    font-family: 'Dancing Script';
+    }
+    #name, #mail{
+    background: transparent;
+    backdrop-filter: blur(90px);
+    box-shadow: 0px 0px 90px 0px rgba(26, 20, 20, 0.884) inset;
+    padding: 12px;
+    width: 30%;
+    border: 1px solid #fff;
+    margin: 0;
+    color: #fff;
+    font-style: italic;
+    font-size: medium;
+    height: 45px;
+    font-family: Bitter,Georgia,Cambria,Times New Roman,Times,serif;
+    }
+    #name::placeholder, #mail::placeholder{
+    color: #fff;
+    }
+    #go{
+    font-weight: 900;
+    cursor: pointer;
+    font-family: Bitter,Georgia,Cambria,Times New Roman,Times,serif;
+    height: 45px;
+    font-size: 15px;
+    font-style: oblique;
+    color: rgba(58, 40, 25, 0.815);
+    background: rgb(247, 241, 209);
+    border: none;
+    opacity: 0.9;
+    }
+            
+    #go:hover{
+    color: rgb(207, 144, 25);
+    opacity: 1;
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+                inset -4px -4px 6px 0 rgba(255,255,255,.2),
+                inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+                                             /*SIDEBAR HIDDEN RECIPES                      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  c.display:none?  !!!!!!!!!!!!!!!!!!!!*/
+.container-fluid-trei, .container-fluid-patru, .container-fluid-cinci, .container-fluid-sase, .container-fluid-sapte{
+border-bottom: 1px solid #fff;
+display: none;
+}
+#names{
+backdrop-filter: blur(500px);
+font-weight: 900;
+border-bottom: 1px solid #fff;
+font-style: italic;
+color: #f8ce8a;
+font-family: 'Tsukimi Rounded', sans-serif;
+font-size: 35px;
+text-align: center;
+width: auto;
+box-shadow: -10px 25px 15px -10px rgba(141, 114, 88, 0.548) inset;
+}
+#notes{
+color: #fff;
+font-style: oblique;
+}
+.recipecard{
+border-top: 1px solid #fff;
+backdrop-filter: blur(20px);
+box-shadow: 0px 0px 20px 0px rgba(243, 243, 243, 0.884) inset;
+border-bottom: 1px solid #fff;
+padding-bottom: 10%;
+display: flex;
+justify-content: space-evenly;
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+.recipecard img{
+border-radius: 5%;
+}
+#recipetitle{
+border-bottom: 1px solid #fff;
+padding-top: 3%;
+color: rgba(223, 206, 114, 0.89);
+font-weight: 900;
+font-style: italic;
+border-top: 1px solid #fff;
+box-shadow: -10px 25px 15px -10px rgba(158, 133, 80, 0.548) inset;
+width: 100%;
+font-family: 'Tsukimi Rounded', sans-serif;
+}
+.reciperating{
+color: rgb(238, 237, 178);
+font-size: larger;
+font-style: italic;
+font-family: Bitter,Georgia,Cambria,Times New Roman,Times,serif;
+
+}
+.ingredients2{
+backdrop-filter: blur(7px);
+border: 1px solid #fff;
+box-shadow: -10px 25px 15px -10px rgba(151, 130, 111, 0.548) inset;
+font-weight: 900;
+margin-top: 10%;
+width: fit-content;
+color: rgba(247, 234, 213, 0.973);
+font-family: 'Tsukimi Rounded', sans-serif;
+font-size: larger;
+}
+.extra{
+padding: 3%;
+backdrop-filter: blur(20px);
+width: 100%;
+box-shadow: -10px 5px 15px 10px rgba(151, 130, 111, 0.548) inset;
+border: 1px solid #fff;
+display: flex;
+margin: 0;
+flex-direction:row;
+justify-content: space-around;
+}
+.type{
+text-align: center;
+font-size: small;
+}
+
+#instru{
+color: yellow;
+width: 100%;
+border-bottom: 1px solid #fff;
+}
+.recipeinstructions{
+backdrop-filter: blur(90px);
+box-shadow: 5px 1px 15px 5px rgba(243, 243, 243, 0.884) inset;
+border-left: 1px solid #fff;
+border-right: 1px solid #fff;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+text-align: center;
+margin: 0;
+height:100%;
+}
+.recipeinstructions h4{
+width: 100%;
+border-bottom: 1px solid #fff;
+color: rgb(255, 207, 123);
+font-size: xx-large;
+font-family: 'Tsukimi Rounded', sans-serif;
+font-weight: 900;
+}
+.recipeinstructions p{
+color: #fff;
+font-size: large;
+font-weight: 900;
+font-family: 'Tsukimi Rounded', sans-serif;
+}
+
+
+
+
+
+/*SIGN-UP/FOLLOW/*/
+.followsign{
+    
+    padding: 1.5%;   
+    box-shadow: -10px 1px 35px -10px rgba(243, 243, 243, 0.884) inset;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    text-align: center;
+    }
+    .signupform{
+    padding-top: 1%;
+    }
+    .followicons{
+    padding-top: 1%;
+    }
+    #textfs{
+    font-weight: 900;
+    text-align: center;
+    font-style: italic;
+    color: #fff;
+    font-family: 'Tsukimi Rounded', sans-serif;
+    font-size: 35px;
+    }
+    #fname,#email{
+    box-shadow: 0px 0px 90px 0px rgb(26, 20, 20) inset;
+    background:transparent;
+    color: #fff;
+    font-style: italic;
+    font-size: medium;
+    width: 40%;
+    border: 1px solid #fff;
+    height: 50px;
+    border-radius: 1%;
+    font-family: Bitter,Georgia,Cambria,Times New Roman,Times,serif;
+    }
+    #fname::placeholder, #email::placeholder{
+    padding: 5%;
+    color: aliceblue;
+    font-style:italic;
+    font-size: large;
+    }
+    
+        /* STILIZARE BUTOANE SIGN-UP/FOLLOW */
+        #faa{
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 25px;
+            height: 55px;
+            width: 75px;
+            text-align: center;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+            #faa:hover{
+            opacity: 1;
+            filter: brightness(1.1);
+        } 
+        
+        .fa-facebook{
+            background: #3B5998;
+            color: white;}
+        .fa-facebook:hover{
+            transform: scaleY(1.1);
+            transition: 0.2s;}
+        
+        .fa-twitter{
+            background: #55ACEE;
+            color: white;}
+        .fa-twitter:hover{
+            transform: scaleY(1.1);
+            transition: 0.2s;}
+        
+        .fa-youtube{
+            background: #bb0000;
+            color: white;}
+        .fa-youtube:hover{
+            transform: scaleY(1.1);
+            transition: 0.2s;}
+        
+        .fa-reddit{
+            background: #ff5700;
+            color: white;}
+        .fa-reddit:hover{
+            transform: scaleY(1.1);
+            transition: 0.2s;}
+        
+        .fa-instagram{
+            background: linear-gradient(#feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+            color:#fff;}
+        .fa-instagram:hover{
+            transform: scaleY(1.1);
+            transition: 0.2s;}
+        
+        #submit{
+            opacity: 0.9;
+            cursor: pointer;
+            font-family: Bitter,Georgia,Cambria,Times New Roman,Times,serif;
+            height: 48px;
+            border-radius: 1%;
+            color: rgb(134, 100, 37);
+            background: rgb(247, 241, 209);
+            border: none;
+            font-weight: 900;
+        }
+                
+        #submit:hover{
+        opacity: 1;
+        color: rgb(207, 144, 25);
+        box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5),
+                    -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+                    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+                    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+        }
+
+
+          /**container ABOUT**/
+.container-fluid-about{
+    margin-top: 1%;
+    padding: 10px;
+}
+.hidden{
+    display: none;
+}
+#formabout {
+    padding: 10px;
+    font-size: medium;
+    font-style: oblique;
+    width: auto;
+}
+input.medium {
+    width: 30px;
+    height: 20px;
+}
+#aboutus{
+    color: rgb(247, 241, 209);
+    font-weight: 500;
+    font-size: 19px;
+    padding-right: 1%;
+    font-style: oblique;
+    font-family: Bitter,Georgia,Cambria,Times New Roman,Times,serif;
+  }
+  #formabout label {
+    font-size: x-large;
+    color: #fff;
+    font-family: Bitter,Georgia,Cambria,Times New Roman,Times,serif;
+  }
+  #comment {
+    backdrop-filter: blur(20px);
+    border: 1px solid #fff;
+    width: 80%;
+    height: 150px;
+  }
+
+/*bottom footer*/
+  .container-fluid-footer{
+    width: 100%;
+    font-weight: 500;
+    padding-top: 2%;
+    }
+    #botbtn{
+    text-decoration: none;
+    }
+    .botbtn{
+    display: flex;
+    justify-content: space-around;
+    }
+    .botbtn a{
+    cursor: pointer;
+    color: #fff;
+    font-style: oblique;
+    }
+    .botbtn a:hover{
+    color: rgb(247, 241, 209);
+    }
+
+
+
+/**TOP BUTTON**/
+#myButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    color: #fff;
+    z-index: 99;
+    font-size: 60px;
+    background: transparent;
+    border: 0;
+    opacity: 0.8;
+    left: 98%;
+    transform: translateX(-50%) translateY(35%);
+    cursor: pointer;
+}
+#myButton:hover{
+    opacity: 1;
+    color: rgb(235, 193, 116);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*<400px**/
+
+@media screen and (max-width:400px) {
+body{
+background: url(poze/BGmobile.jpg);
+background-position:center top;
+background-attachment: fixed;
+}
+.topheader{
+box-shadow: 0px 15px 10px -10px rgba(252, 207, 167, 0.719) inset ;
+border-bottom: 1px solid tan;
+}
+.nav-button, .btnLogin-popup{
+font-size: x-large;
+font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+#searchbar{
+display: none;
+}
+.quote{
+margin-left: 3%;
+} 
+.wrapper{
+width: 100%;
+}
+.icon-close{ 
+margin-right: 5%;
+margin-top: 8%;
+}
+.poze{
+width: 75%;
+}
+.col-md-3{
+margin-top: 5%;
+margin-left: 5%;
+}
+.numeRetete{
+font-size: 20px;
+}
+#yt{
+width: 100%;
+}
+.tabelinfo{
+margin-left: 20%;
+}
+.slider-wrapper{
+padding-right: 0;
+}
+#book{
+    padding: 30px;
+    height: 280px;
+}
+#latest{
+border-top: 2px solid #fff;
+border-bottom: 1px solid #fff;
+box-shadow: 0px 15px 10px -10px rgba(252, 207, 167, 0.719) inset ;
+}
+.tabelinfo{
+padding: 30px;
+margin-top: -1%;
+}
+#recipe{    
+margin-top: 2%;
+border-bottom: 1px solid #fff;
+box-shadow: 0px 15px 10px -10px rgba(252, 207, 167, 0.719) inset ;
+}
+#textfs{
+font-size: large;
+}
+.signupform{
+padding-top: 40%;
+}
+#fname,#email{
+width: 100%;
+}
+#textfooter{
+font-size: xx-large;
+}
+#submit{
+margin-top: 5%;
+}
+.fa{
+margin-bottom: 4%;
+}
+.card:hover{
+transform: none;
+}
+.card{
+position: inherit;
+}
+.easy{
+position: relative;
+top: 6300px;
+width: 95%;
+}
+#book{
+width: 100%;
+}
+.extra{
+width: 100%;
+padding: 0;
+margin: 0;
+}
+.slide-arrow {
+height: 84px;
+font-weight: 700;
+width: 12%;
+cursor: pointer;
+opacity: 0.8;
+}
+.welcome{
+box-shadow: 0px 15px 40px 5px rgba(233, 215, 199, 0.719) inset ;
+border-bottom: 1px solid #fff;
+}
+#welcome{
+font-size:medium;
+}
+#wsr{
+font-size: 44px;
+}
+#slide-arrow-next{
+padding-left: 6%;
+width: 11%;
+}
+#copyrights{
+font-size: x-small;
+}
+.botbtn a{
+display: flex;
+}
+.container-fluid-footer{
+font-size: x-small;
+padding: 5%;
+}
+#myButton {
+bottom: 55px;
+left:88%;
+font-size: 44px;
+}
+#formabout{
+text-align: center;
+font-size: smaller;
+border-bottom: 1px solid #fff;
+}
+#aboutus{
+font-size: smaller;
+}
+.container-fluid-about h3{
+text-align: center;
+}
+
+}
